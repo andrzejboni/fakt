@@ -7,11 +7,6 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
-
-        // Dodać na takiej samej zasadzie jak w studencie  do firymy, nazwę nip i adres.
-
-
 //      Faktura st = new Faktura(null, "Janusz Kowal Pchlaczna 12", "Zbigniew Ryneczek Turkosowa 21", 12, "2018-12-12","karma dla psa",
 //              8,"23");
 
@@ -24,6 +19,8 @@ public class Main {
 
         System.out.println("wpisz  co chcesz zrobić: \n  dodaj \n  listuj \n  exit");
         String odczyt;
+
+        Firma firma1 = new Firma();
 
         do {
             odczyt = scanner.nextLine();
@@ -57,14 +54,14 @@ public class Main {
                 double stawkaPodatku = scanner.nextDouble();
 
 
+                fakturaDao.saveStudentIntoDataBase(new Faktura(null, daneNabywcy, daneSprzedawcy,kwota, date,produkt,ilosc,stawkaPodatku,firma1));
 
-                fakturaDao.saveStudentIntoDataBase(new Faktura(null, daneNabywcy, daneSprzedawcy,kwota, date,produkt,ilosc,stawkaPodatku));
+
             } else {
                 break;
             }
         } while (!odczyt.equals("exit"));
     }
-
 }
 
 //        private String daneNabywcy;
@@ -74,3 +71,4 @@ public class Main {
 //        private String produkt;
 //        private int ilosc;
 //        private double stawkaPodatku;
+//          private Firma firma;

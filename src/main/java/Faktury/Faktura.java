@@ -9,7 +9,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Faktura {
+public class Faktura extends  BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     // identity - pobiera id, nastęonir przyjmuje wartość

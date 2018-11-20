@@ -12,7 +12,7 @@ import java.util.List;
     @Data
     @AllArgsConstructor
     @NoArgsConstructor
-    public class Firma {
+    public class Firma extends  BaseEntity {
         @Id
         @GeneratedValue(strategy = GenerationType.TABLE)
         private Long id;
