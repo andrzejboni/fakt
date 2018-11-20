@@ -41,7 +41,7 @@ public class FakturaDao {
             return faktury;
         } catch (SecurityException se) {
             //jeśli coś pójdzie nietak - wypiszmy komunikat
-            // 
+            //
             System.err.println("nie udało się pobrać z bazy");
 
         }
