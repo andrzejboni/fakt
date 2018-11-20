@@ -1,5 +1,6 @@
 package Faktury;
 
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Scanner;
@@ -7,6 +8,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+
+        // Dodać na takiej samej zasadzie jak w studencie  do firymy, nazwę nip i adres.
 
 
 //      Faktura st = new Faktura(null, "Janusz Kowal Pchlaczna 12", "Zbigniew Ryneczek Turkosowa 21", 12, "2018-12-12","karma dla psa",
@@ -35,10 +38,16 @@ public class Main {
                 System.out.println("Podaj kwote na jaką opiewa faktura");
                 int kwota = scanner.nextInt();
 
-                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
 
-                String date = "16/08/2016";
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+                LocalDate localDate = LocalDate.now();
+
+                String date = localDate.toString();
                 System.out.println("Data Wystawienia to: " +  date);
+
+//                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+//                LocalDate localDate = LocalDate.now();
+
 
                 System.out.println("Podaj produkt ktrórego dotyczy faktura ");
                 String produkt = scanner.nextLine();
@@ -46,6 +55,8 @@ public class Main {
                 int ilosc = scanner.nextInt();
                 System.out.println("Podaj stawke podatku na produkt");
                 double stawkaPodatku = scanner.nextDouble();
+
+
 
                 fakturaDao.saveStudentIntoDataBase(new Faktura(null, daneNabywcy, daneSprzedawcy,kwota, date,produkt,ilosc,stawkaPodatku));
             } else {

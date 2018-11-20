@@ -12,6 +12,7 @@
         <property name="show_sql">true</property>
         <property name="dialect">org.hibernate.dialect.MySQL57Dialect</property>
         <mapping class="Faktury.Faktura"/>
+        <mapping class="Faktury.Firma"/>
 
     </session-factory>
 </hibernate-configuration>
